@@ -1,0 +1,264 @@
+/* src/styles/mainapp.css */
+
+/* Root colors */
+:root {
+  --dark-bg: #1a0f2e;
+  --purple-bg: #2d0c4c;
+  --accent-purple: #9b59b6;
+  --light-purple: #b287f0;
+  --text-light: #f0e6ff;
+  --text-muted: #c8bce0;
+  --card-bg: #2b0f4b;
+  --hover-bg: #3a1a6a;
+  --footer-bg: #1f0d2b;
+  --online-green: #2ecc71;
+}
+
+/* Global */
+#main-app {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--purple-bg);
+  border-bottom: 2px solid var(--accent-purple);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--light-purple);
+}
+
+.logo i {
+  font-size: 2rem;
+}
+
+.age-badge {
+  background-color: var(--accent-purple);
+  color: var(--text-light);
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  font-size: 0.8rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-purple);
+  background-color: var(--card-bg);
+}
+
+.user-name {
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.online-indicator i {
+  color: var(--online-green);
+  font-size: 0.9rem;
+}
+
+/* Mode Selection */
+#welcome-text,
+#mode-selection {
+  padding: 30px;
+  text-align: center;
+}
+
+.welcome-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--light-purple);
+}
+
+.welcome-text p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.server-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.stat-item i {
+  color: var(--accent-purple);
+}
+
+/* Mode Cards */
+.mode-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.mode-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: left;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mode-card:hover {
+  background-color: var(--hover-bg);
+  transform: translateY(-5px);
+}
+
+.mode-icon i {
+  font-size: 2rem;
+  color: var(--accent-purple);
+}
+
+.mode-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--light-purple);
+}
+
+.mode-description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: var(--footer-bg);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.footer i {
+  color: var(--accent-purple);
+}
+
+.footer-links {
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.footer-links a {
+  color: var(--light-purple);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-purple);
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+/* Settings (gear) button */
+.account-corner {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 6px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #4b006e, #2e0047);
+  color: #d1b3ff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.account-corner:hover {
+  background: linear-gradient(145deg, #6a00a8, #4b006e);
+  color: #ffffff;
+  transform: rotate(30deg) scale(1.1);
+  box-shadow: 0 4px 12px rgba(106,0,168,0.6);
+}
+
+/* Floating dropdown */
+.account-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #2b003f;
+  border: 1px solid #6a00a8;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+  animation: fadeInScale 0.3s ease;
+  min-width: 150px;
+  z-index: 200;
+}
+
+/* Buttons inside dropdown */
+.account-menu button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 14px;
+  color: #e0c8ff;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.account-menu button:hover {
+  background: rgba(106,0,168,0.6);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(106,0,168,0.4);
+}
+
+/* Smooth animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
